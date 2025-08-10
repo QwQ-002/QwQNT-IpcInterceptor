@@ -22,7 +22,6 @@ declare const IpcInterceptor: IpcInterceptorType;
 
 export { proxyIpcMessages, IpcInterceptor };
 
-// 让 NodeJS global 上挂载的 IpcInterceptor 也有类型
 declare global {
   namespace NodeJS {
     interface Global {
