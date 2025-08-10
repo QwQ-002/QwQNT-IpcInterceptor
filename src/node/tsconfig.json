@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "nodenext", // Node.js 环境推荐使用 CJS
+    "moduleResolution": "nodenext",
+    "declaration": true, // 生成声明文件
+    "declarationMap": true, // 生成声明文件映射（方便调试）
+    "emitDeclarationOnly": true, // 只输出声明文件，不输出 js
+    "outDir": "../../dist/node", // 声明文件输出目录
+    "lib": ["ES2022"], // 不包含 "DOM" 库，因 Node.js 环境不需要浏览器相关的 DOM API
+    "rootDir": "../../"
+  },
+  "include": ["./**/*.ts", "../../scripts/**/*.ts", "../../global.d.ts"],
+  "references": [
+    { "path": "../common" } // 声明依赖于 common 模块
+  ]
+}
