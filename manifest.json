@@ -1,33 +1,25 @@
 {
   "manifest_version": 4,
-  "type": "extension",
-  "name": "轻量工具箱",
-  "slug": "lite_tools",
-  "description": "轻量 · 优雅 · 高效",
-  "version": "3.0.0",
-  "icon": "./icon.png",
+  "type": "framework",
+  "name": "IPC 事件拦截器",
+  "slug": "ipc_interceptor",
+  "description": "统一管理 IPC 事件",
   "authors": [
     {
       "name": "曦月",
       "link": "https://github.com/xiyuesaves"
     }
   ],
-  "platform": [
-    "win32",
-    "linux",
-    "darwin"
-  ],
+  "platform": ["win32", "linux", "darwin"],
   "injects": {
-    "renderer": "./dist/web/index.ll.js",
-    "main": "./dist/node/index.js",
-    "preload": "./preload.js"
+    "main": "./dist/node/index.js"
   },
   "repository": {
-    "repo": "xiyuesaves/lite_tools",
-    "branch": "v4",
+    "repo": "QwQ-002/QWQNT-IpcInterceptor",
+    "branch": "master",
     "release": {
-      "tag": "v3.0.0",
-      "file": "lite_tools_v4.zip"
+      "tag": "v0.0.1",
+      "file": "ipc_interceptor.zip"
     }
   }
 }
