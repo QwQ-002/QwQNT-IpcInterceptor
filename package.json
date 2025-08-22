@@ -15,7 +15,7 @@
     "dev": "ts-node -P ./src/node/tsconfig.json scripts/build.ts --watch"
   },
   "keywords": [],
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.15.0",
   "devDependencies": {
     "@types/node": "20.11.20",
     "electron": "^37.2.5",

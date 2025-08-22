@@ -10,3 +10,10 @@ interface Window {
   navigation: any;
   qwqnt: any;
 }
+
+declare global {
+  var cacheLogs: any[];
+  var IpcInterceptor: IpcInterceptorType;
+}
+
+export {};
