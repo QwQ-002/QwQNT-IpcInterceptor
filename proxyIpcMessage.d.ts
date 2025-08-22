@@ -23,9 +23,7 @@ declare const IpcInterceptor: IpcInterceptorType;
 export { proxyIpcMessages, IpcInterceptor };
 
 declare global {
-  namespace NodeJS {
-    interface Global {
-      IpcInterceptor: IpcInterceptorType;
-    }
-  }
+  var IpcInterceptor: IpcInterceptorType;
 }
+
+export {};

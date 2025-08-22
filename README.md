@@ -28,7 +28,7 @@ IpcInterceptor.onIpcSend((...args) => {
 });
 ```
 
-对于使用 Typescript 编写插件的开发者，可能需要将 `proxyIpcMessage` 写入 `global.d.ts` 中
+对于使用 Typescript 编写插件的开发者，可能需要将 `IpcInterceptor` 写入 `global.d.ts` 中
 
 ```js
 // ipc-interceptor.d.ts
@@ -56,12 +56,10 @@ declare const IpcInterceptor: IpcInterceptorType;
 export { proxyIpcMessages, IpcInterceptor };
 
 declare global {
-  namespace NodeJS {
-    interface Global {
-      IpcInterceptor: IpcInterceptorType;
-    }
-  }
+  var IpcInterceptor: IpcInterceptorType;
 }
+
+export {};
 ```
 
 ### 构建方法
