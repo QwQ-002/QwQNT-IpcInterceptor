@@ -4,9 +4,7 @@ export const Logs = class Logger {
     this.logName = logName;
   }
   log(...args: any[]) {
-    if ("cacheLogs" in global) {
-      globalThis.cacheLogs.push([this.logName, ...args]);
-    }
+    globalThis.cacheLogs?.push([this.logName, ...args]);
     console.log(`[${this.logName}]`, ...args);
   }
 };

@@ -12,7 +12,7 @@ interface Window {
 }
 
 declare global {
-  var cacheLogs: any[];
+  var cacheLogs: any[] | undefined;
   var IpcInterceptor: IpcInterceptorType;
 }
 
