@@ -32,7 +32,6 @@ IpcInterceptor.onIpcSend((...args) => {
 
 ```js
 // ipc-interceptor.d.ts
-import { BrowserWindow } from "electron";
 
 type Unsubscribe = () => void;
 type EventName = string | string[];
@@ -49,17 +48,7 @@ interface IpcInterceptorType {
   offIpcSendEvents(eventName: EventName, callback: IpcCallback): void;
 }
 
-declare function proxyIpcMessages(window: BrowserWindow): void;
-
 declare const IpcInterceptor: IpcInterceptorType;
-
-export { proxyIpcMessages, IpcInterceptor };
-
-declare global {
-  var IpcInterceptor: IpcInterceptorType;
-}
-
-export {};
 ```
 
 ### 构建方法
