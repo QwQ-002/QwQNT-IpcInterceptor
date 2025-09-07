@@ -10,4 +10,4 @@ if ("qwqnt" in global) {
   qwqnt.main.hooks.whenBrowserWindowCreated.peek(onBrowserWindowCreated);
 }
 
-export default { onBrowserWindowCreated };
+module.exports = { onBrowserWindowCreated };
