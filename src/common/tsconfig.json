@@ -1,8 +1,0 @@
-{
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "resolveJsonModule": false,
-    "lib": ["ES2024"] // 仅包含 ECMAScript 核心库
-  },
-  "include": ["./**/*.ts"]
-}
