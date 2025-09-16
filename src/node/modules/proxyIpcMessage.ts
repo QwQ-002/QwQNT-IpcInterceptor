@@ -1,8 +1,7 @@
 import { BrowserWindow } from "electron";
-import { Logs } from "./logs";
+import { createLogger } from "./createLogger";
 
-const logs = new Logs("IPC Proxy");
-const log = logs.log;
+const log = createLogger("IPC Proxy");
 
 // 接收端 & 发送端回调集合（全局）
 const ipcReceiveHandlers: Set<Function> = new Set();
