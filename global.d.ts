@@ -1,4 +1,3 @@
-/// <reference path="./types/qwqnt-framework/main.d.ts" />
 /// <reference path="./proxyIpcMessage.d.ts" />
 
 declare module "*.scss" {
@@ -6,14 +5,14 @@ declare module "*.scss" {
   export default content;
 }
 
+// ipc-logger 兼容
+declare const Logs: any;
+
 interface Window {
   navigation: any;
   qwqnt: any;
 }
 
 declare global {
-  var cacheLogs: any[] | undefined;
   var IpcInterceptor: IpcInterceptorType;
 }
-
-export {};
