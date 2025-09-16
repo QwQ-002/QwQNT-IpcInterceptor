@@ -3,7 +3,7 @@
   "type": "framework",
   "name": "IPC 事件拦截器",
   "slug": "ipc_interceptor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "统一管理 IPC 事件",
   "authors": [
     {
@@ -19,7 +19,7 @@
     "repo": "QwQ-002/QWQNT-IpcInterceptor",
     "branch": "master",
     "release": {
-      "tag": "v1.0.0",
+      "tag": "v1.0.1",
       "file": "ipc_interceptor.zip"
     }
   }
