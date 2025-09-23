@@ -11,8 +11,8 @@
   "license": "AGPL-3.0-only",
   "main": "./dist/node/index.js",
   "scripts": {
-    "build": "ts-node -P ./src/node/tsconfig.json scripts/build.ts",
-    "dev": "ts-node -P ./src/node/tsconfig.json scripts/build.ts --watch"
+    "build": "ts-node -P ./tsconfig.json scripts/build.ts",
+    "dev": "ts-node -P ./tsconfig.json scripts/build.ts --watch"
   },
   "keywords": [],
   "packageManager": "pnpm@10.15.0",

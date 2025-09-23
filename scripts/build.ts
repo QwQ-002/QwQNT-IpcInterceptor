@@ -1,15 +1,12 @@
 import { build, context, BuildOptions } from "esbuild";
-import { sassPlugin } from "esbuild-sass-plugin";
 
 const isDev = process.argv.includes("--watch");
 
 // 通用配置
 const baseConfig: BuildOptions = {
   bundle: true,
-  // minify: !isDev,
-  minify: false,
-  sourcemap: isDev ? "linked" : false,
   charset: "utf8",
+  tsconfig: "./tsconfig.json",
 };
 
 // node 构建配置
@@ -18,18 +15,20 @@ const nodeConfig: BuildOptions = {
   platform: "node",
   target: "node20",
   format: "cjs",
-  entryPoints: ["src/node/index.ts"],
-  outfile: "dist/node/index.js",
+  entryPoints: ["src/main/index.ts"],
+  outfile: "dist/main/index.js",
   external: ["electron"],
-  tsconfig: "./src/node/tsconfig.json",
 };
 
 // 构建函数
 async function runBuild() {
   if (isDev) {
     console.log("Starting development build...");
-    const nodeContext = await context(nodeConfig);
-    await nodeContext.watch();
+
+    const mainCtx = await context(nodeConfig);
+    
+    await mainCtx.watch();
+
     console.log("Development build started. Watching for changes...");
   } else {
     console.log("Starting production build...");
