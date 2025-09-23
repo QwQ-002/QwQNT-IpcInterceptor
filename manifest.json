@@ -13,7 +13,7 @@
   ],
   "platform": ["win32", "linux", "darwin"],
   "injects": {
-    "main": "./dist/node/index.js"
+    "main": "./dist/main/index.js"
   },
   "repository": {
     "repo": "QwQ-002/QWQNT-IpcInterceptor",

@@ -9,7 +9,7 @@
   },
   "author": "xiyue",
   "license": "AGPL-3.0-only",
-  "main": "./dist/node/index.js",
+  "main": "./dist/main/index.js",
   "scripts": {
     "build": "ts-node -P ./tsconfig.json scripts/build.ts",
     "dev": "ts-node -P ./tsconfig.json scripts/build.ts --watch"
