@@ -1,7 +1,12 @@
 import { BrowserWindow } from "electron";
 import { createLogger } from "./createLogger";
 
-const log = createLogger("IPC Proxy");
+let log = createLogger("IPC Proxy");
+
+setTimeout(() => {
+  log = createLogger("IPC Proxy");
+  log("loaded");
+}, 100);
 
 // 接收端 & 发送端回调集合（全局）
 const ipcReceiveHandlers: Set<Function> = new Set();
