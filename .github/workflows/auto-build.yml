@@ -19,7 +19,7 @@ jobs:
         run: |
           npm install
           npm run publish
-          zip -r ./ipc_interceptor.zip ./src/* ./package.json ./README.md ./RELEASE.md ./LICENSE ./manifest.json
+          zip -r ./ipc_interceptor.zip ./dist/* ./package.json ./README.md ./RELEASE.md ./LICENSE ./manifest.json
       - name: Upload Release File
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
