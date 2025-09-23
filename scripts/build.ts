@@ -1,6 +1,8 @@
 import { build, context, BuildOptions } from "esbuild";
+import fs from "node:fs";
 
 const isDev = process.argv.includes("--watch");
+const isPublish = process.argv.includes("--publish");
 
 // 通用配置
 const baseConfig: BuildOptions = {
@@ -26,7 +28,7 @@ async function runBuild() {
     console.log("Starting development build...");
 
     const mainCtx = await context(nodeConfig);
-    
+
     await mainCtx.watch();
 
     console.log("Development build started. Watching for changes...");
@@ -34,6 +36,16 @@ async function runBuild() {
     console.log("Starting production build...");
     try {
       await Promise.all([build(nodeConfig)]);
+
+      if (isPublish) {
+        // 同步版本号
+        const manifestJSON = JSON.parse(fs.readFileSync("./manifest.json", "utf-8"));
+        const packageJSON = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
+        manifestJSON.version = packageJSON.version;
+        manifestJSON.repository.release.tag = `v${packageJSON.version}`;
+        fs.writeFileSync("./manifest.json", JSON.stringify(manifestJSON, null, 2));
+      }
+
       console.log("Production build completed successfully.");
     } catch (err) {
       console.error("Error during production build:", err);

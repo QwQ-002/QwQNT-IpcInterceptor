@@ -1,7 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/QwQ-002/types/main/plugin.schema.json",
   "name": "ipc_interceptor",
-  "version": "1.0.1",
   "description": "统一管理 IPC 事件",
   "type": "commonjs",
   "qwqnt": {
@@ -12,6 +11,7 @@
   "main": "./dist/main/index.js",
   "scripts": {
     "build": "ts-node -P ./tsconfig.json scripts/build.ts",
+    "publish": "ts-node -P ./tsconfig.json scripts/build.ts --publish",
     "dev": "ts-node -P ./tsconfig.json scripts/build.ts --watch"
   },
   "keywords": [],
