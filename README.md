@@ -13,7 +13,7 @@
 ```json
 "qwqnt":{
   "dependencies": {
-    "ipc_interceptor": "^0.0.1"
+    "ipc_interceptor": "^1.1.0"
   }
 }
 ```
@@ -28,28 +28,9 @@ IpcInterceptor.onIpcSend((...args) => {
 });
 ```
 
-对于使用 Typescript 编写插件的开发者，可能需要将 `IpcInterceptor` 写入 `global.d.ts` 中
+## 使用本插件的 TypeScript 类型
 
-```js
-// ipc-interceptor.d.ts
-
-type Unsubscribe = () => void;
-type EventName = string | string[];
-type IpcCallback = (...args: any[]) => void;
-
-interface IpcInterceptorType {
-  onIpcReceive(callback: IpcCallback): Unsubscribe;
-  onIpcSend(callback: IpcCallback): Unsubscribe;
-  offIpcReceive(callback: IpcCallback): void;
-  offIpcSend(callback: IpcCallback): void;
-  onIpcReceiveEvents(eventName: EventName, callback: IpcCallback): Unsubscribe;
-  onIpcSendEvents(eventName: EventName, callback: IpcCallback): Unsubscribe;
-  offIpcReceiveEvents(eventName: EventName, callback: IpcCallback): void;
-  offIpcSendEvents(eventName: EventName, callback: IpcCallback): void;
-}
-
-declare const IpcInterceptor: IpcInterceptorType;
-```
+本插件提供了类型定义文件 [proxyIpcMessage.d.ts](/src/types/proxyIpcMessage.d.ts)，为了在 TypeScript 中获得类型提示，你需要手动将其拷贝到你的项目中。
 
 ### 构建方法
 
