@@ -173,10 +173,10 @@ function proxyIpcMessages(window: BrowserWindow) {
 const IpcInterceptor = {
   onIpcReceive,
   onIpcSend,
-  offIpcReceive,
-  offIpcSend,
   onIpcReceiveEvents,
   onIpcSendEvents,
+  offIpcReceive,
+  offIpcSend,
   offIpcReceiveEvents,
   offIpcSendEvents,
 };
